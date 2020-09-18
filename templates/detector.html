@@ -50,7 +50,7 @@
         <h4> Uploaded image... </h4>
 
 
-        <div class="col-md-4 col-xs-12 col-sm-12">
+        <div class="col-md-4 col-xs-12 col-sm-12" style="width: 100%">
 
             <div class="item">
                 {% if file == '' %}
@@ -58,7 +58,7 @@
                 {% else %}
                 <img style="height: 60vh; width: auto;" src="{{url_for('static',filename='images/'+file)}}" alt="Chicago"> {% endif %}
             </div>
-            <div style="width: 35vh">
+            <div style="width:100%">
                 {% if output == '' %}
                 <h4>Apologies! Number could not be recognized...</h4>
                 <h4>Please try with a clear and precise image</h4>
