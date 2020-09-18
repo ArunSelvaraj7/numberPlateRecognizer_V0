@@ -1,0 +1,72 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title> Vehicle Number plate Recongnizer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+    
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+    }
+    /* Full height image header */
+    
+    .w3-bar .w3-button {
+        padding: 16px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card text-center" id="myNavbar">
+            <h2 class="w3-bar-item w3-button w3-wide">Vehicle Number Plate Recognition System</h2>
+        </div>
+    </div>
+
+    <br><br><br><br>
+    <div class="container login-msg">
+
+        <h3> Upload the image here... </h3>
+
+        <div class="col-md-4 col-xs-12 col-sm-12">
+
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+            {% if flag==1%}
+            <div class="item" style="height: 100%">
+                <img src="{url_for('static',filename='images\img.jpg')}}" alt="Chicago" style="display:block;height:100%;width:auto;margin-left:auto;margin-right:auto">
+            </div>
+            {% endif %}
+            <div> {{ form.hidden_tag() }} {{ wtf.quick_form(form) }} </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+
+        </div>
+
+        <hr><br>
+
+    </div>
+</body>
+
+</html>

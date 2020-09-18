@@ -1,0 +1,90 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title> Vehicle Number plate Recongnizer </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Raleway", sans-serif
+    }
+    
+    body,
+    html {
+        height: 100%;
+        line-height: 1.8;
+    }
+    /* Full height image header */
+    
+    .w3-bar .w3-button {
+        padding: 16px;
+    }
+</style>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card text-center" id="myNavbar">
+            <h2 class="w3-bar-item w3-button w3-wide">Vehicle Number Plate Recognition System</h2>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="container login-msg">
+        <br>
+        <h4> Uploaded image... </h4>
+
+
+        <div class="col-md-4 col-xs-12 col-sm-12">
+
+            <div class="item">
+                {% if file == '' %}
+                <h4>Please upload a valid file</h4>
+                {% else %}
+                <img style="height: 60vh; width: auto;" src="{{url_for('static',filename='images/'+file)}}" alt="Chicago"> {% endif %}
+            </div>
+            <div style="width: 150%">
+                {% if output == '' %}
+                <h4>Apologies! Number could not be recognized...</h4>
+                <h4>Please try with a clear and precise image</h4>
+                {% else %}
+                <h4>Please find below the recognised number of the vehicle</h4>
+                <h4>{{output}}</h4>
+                {% endif %}
+                <h4></h4>
+            </div>
+            <div>
+                <form action="{{url_for('detector')}}" method="POST">
+                    <button class='btn btn-primary' type="submit"> BACK </button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+
+        </div>
+
+        <hr><br>
+
+    </div>
+
+
+</body>
+
+
+</html>
