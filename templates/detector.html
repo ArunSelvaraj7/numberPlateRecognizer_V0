@@ -1,4 +1,4 @@
-{% import "bootstrap/wtf.html" as wtf %} {% import os as os %}
+{% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +58,6 @@
                 {% else %}
                 <img style="height: 60vh; width: auto;" src="{{url_for('static',filename='images/'+file)}}" alt="Chicago"> {% endif %}
             </div>
-            {% for file in os.listdir(UPLOAD_FOLDER): %} {{os.remove(os.path.join(UPLOAD_FOLDER,file) )}} {% endfor %}
             <div style="width: 150%">
                 {% if output == '' %}
                 <h4>Apologies! Number could not be recognized...</h4>
