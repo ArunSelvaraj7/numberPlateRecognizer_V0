@@ -58,11 +58,12 @@
                 {% else %}
                 <img style="height: 60vh; width: auto;" src="{{url_for('static',filename='images/'+file)}}" alt="Chicago"> {% endif %}
             </div>
-            <div style="width: 120%">
+            <div style="width: 140%">
                 {% if output == '' %}
                 <h4>Apologies! Number could not be recognized...</h4>
                 <h4>Please try with a clear and precise image</h4>
                 {% else %}
+                <h4>Please find below the recognised number of the vehicle</h4>
                 <h4>{{output}}</h4>
                 {% endif %}
                 <h4></h4>
