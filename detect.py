@@ -59,7 +59,8 @@ def detect_plate(net , charModel, filename):
         
         # Perform text extraction
         data = pytesseract.image_to_string(gray, lang='eng', config=custom_config)
-        output = re.sub(r'\W+', '', data)
+        data = re.sub(r'\W+', '', data)
+        output = data.replace('_', "")
 
         if (len(output)< 8):
         
